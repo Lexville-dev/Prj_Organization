@@ -44,7 +44,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $Email = $input_email;
       }
-  }
 
   //Validation of Priority
 
@@ -60,21 +59,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   // Check input errors before inserting in database
       if(empty($title_err) && empty($name_err) && empty($Contact_Number_err)&& empty($Email_err)&& empty($Content_err)){
     // Prepare an insert statement
-            $sql = "INSERT INTO employees (name, address, salary) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO requests (Title, Name, Contact_Number, Email_Address, Priority, Content) VALUES (?, ?, ?, ?, ?, ?)";
 
             if($stmt = mysqli_prepare($mysqli, $sql)){
       // Bind variables to the prepared statement as parameters
-                  mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_address, $param_salary);
+                  mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_address, $param_salary, $param_Email_Address, $param_Priority, $param_Content);
 
       // Set parameters
-                  $param_name = $name;
-                  $param_address = $address;
-                  $param_salary = $salary;
+                  $param_title = $Title;
+                  $param_name = $Name;
+                  $param_salary = $Contact_Number;
+                  $param_Email_Address = $Email_Address;
+                  $param_Priority = $Priority;
+                  $param_Content = $Content;
 
       // Attempt to execute the prepared statement
                   if(mysqli_stmt_execute($stmt)){
       // Records created successfully. Redirect to landing page
-                      header("location: crud-index.php");
+                      header("location: index.php");
                       exit();
                   } else{
                       echo "Oops! Something went wrong. Please try again later.";
@@ -98,14 +100,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
-                <label for="exampleFormControlInput1">Request Title</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <label for="RequestTitle">Request Title</label>
+                <input type="text" class="form-control" id="RequestTitle" placeholder="">
               </div>
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
-                <label for="exampleFormControlInput1">Select Priority</label>
+                <label for="SelectPriority">Select Priority</label>
                   <select class="form-select" aria-label=".form-select-sm example">
                     <option value="1">Note</option>
                     <option value="2">Low</option>
@@ -120,32 +122,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
-                <label for="exampleFormControlInput1">Name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-              </div>
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" placeholder="" <?php echo (!empty($Name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Name; ?> >
+                <?php if(isset($name_err)){ ?>
+                  <span class="invalid-feedback">
+                    <?php echo $name_err; ?>
+                  </span>
+                <?php } ?>
+              </div> >
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
-                <label for="exampleFormControlInput1">Contact Number</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="01234 12345">
+                <label for="Contact Number">Contact Number</label>
+                <input type="text" class="form-control" id="Contact Number" placeholder="01234 12345">
               </div>
             </div>
         </div>
 
           <div class="form-group">
-              <label for="exampleFormControlInput1">Email</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="example@example.com">
+              <label for="Email">Email</label>
+              <input type="email" class="form-control" id="Email" placeholder="example@example.com">
             </div>
 
 
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Subject</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+              <label for="Subject">Subject</label>
+              <textarea class="form-control" id="Subject" rows="6"></textarea>
             </div>
 
             <div class="form-group">
-              <a href="#" class="btn btn-primary"> Submit </a>
+              <a href="/Prj_Organization/admin/viewticket.php" class="btn btn-primary"> Submit </a>
             </div>
 
       </div>

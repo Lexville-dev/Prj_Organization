@@ -64,5 +64,7 @@ table, th, td {
                   mysqli_close($mysqli);
                   ?>
    </div>
-
+   <div class="form-group">
+     <a href="../index.php" class="btn btn-primary"> back </a>
+   </div>
 <?php include "../includes/footer.php" ?>
