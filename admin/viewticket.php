@@ -1,4 +1,4 @@
-<?php include "../includes/header.php"?>
+<?php include "../views/header.php"?>
 <style>
 table, th, td {
             border: 1px solid black;
@@ -63,4 +63,4 @@ echo '</div>'?>
    <div class="form-group">
      <a href="../index.php" class="btn btn-primary"> back </a>
    </div>
-<?php include "../includes/footer.php" ?>
+<?php include "../views/footer.php" ?>

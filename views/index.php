@@ -1,4 +1,4 @@
-<?php include "/views/header.php"; 
+<?php include "header.php";
 
 //Define variables for the table, set with no value
 $Title = $Name = $Contact_Number = $Email = $Priority = $Content = "";
@@ -152,4 +152,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       </div>
 </form>
 
-<?php include "/views/footer.php" ?>
+
+<div class="form-group">
+  <a class="btn btn-primary" href = "../admin/viewticket.php" > admin </a>
+</div>
+
+<?php include "footer.php" ?>

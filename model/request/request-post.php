@@ -1,5 +1,7 @@
 <?php
-include "/includes/db_connection.php"
+include "../../includes/db_connection.php";
+
+$conn = OpenCon();
 
   $sql = "INSERT INTO request (Title, Name, Contact_Number, Priority, Email, Content) VALUES (?, ?, ?, ?, ?, ?)";
       if($stmt = $conn->prepare($sql)){
@@ -10,4 +12,5 @@ include "/includes/db_connection.php"
           else{
             echo "fuck";
         }
+      }
 $conn->close();

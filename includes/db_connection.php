@@ -4,7 +4,7 @@ function OpenCon(){
  $dbuser = "root";
  $dbpass = "zsG85Nu4P8gW5SC8";
  $db = "prj_organization";
- 
+
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
 
  if ($conn->connect_error) {
