@@ -61,6 +61,6 @@ echo '<div class="container">';
 echo '</div>'?>
 
    <div class="form-group">
-     <a href="../index.php" class="btn btn-primary"> back </a>
+     <a href="../views/index.php" class="btn btn-primary"> back </a>
    </div>
 <?php include "../views/footer.php" ?>
