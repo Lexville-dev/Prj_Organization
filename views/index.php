@@ -1,5 +1,4 @@
-<?php include "includes/header.php" ?>
-<?php
+<?php include "/views/header.php"; 
 
 //Define variables for the table, set with no value
 $Title = $Name = $Contact_Number = $Email = $Priority = $Content = "";
@@ -96,19 +95,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div class="container">
   <h1>Create a Notice</h1>
 
-    <form>
+    <form action = "/Prj_Organization/model/request/request-post.php" method = "POST">
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
                 <label for="RequestTitle">Request Title</label>
-                <input type="text" class="form-control" id="RequestTitle" placeholder="">
+                <input type="text" class="form-control" id="RequestTitle" placeholder="" name = "Title" >
               </div>
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
                 <label for="SelectPriority">Select Priority</label>
-                  <select class="form-select" aria-label=".form-select-sm example">
+                  <select class="form-select" aria-label=".form-select-sm example" name = "Priority" >
                     <option value="1">Note</option>
                     <option value="2">Low</option>
                     <option value="3" selected>Medium</option>
@@ -123,39 +122,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" id="Name" placeholder="" <?php echo (!empty($Name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $Name; ?> >
-                <?php if(isset($name_err)){ ?>
-                  <span class="invalid-feedback">
-                    <?php echo $name_err; ?>
-                  </span>
-                <?php } ?>
-              </div> >
+                <input type="text" class="form-control" id="Name" placeholder="" name = "Name">
+              </div>
             </div>
 
             <div class="col-xs-12 col-sm-6">
               <div class="form-group">
                 <label for="Contact Number">Contact Number</label>
-                <input type="text" class="form-control" id="Contact Number" placeholder="01234 12345">
+                <input type="text" class="form-control" id="Contact Number" placeholder="01234 12345" name = "Contact_Number" >
               </div>
             </div>
         </div>
 
           <div class="form-group">
               <label for="Email">Email</label>
-              <input type="email" class="form-control" id="Email" placeholder="example@example.com">
+              <input type="email" class="form-control" id="Email" placeholder="example@example.com"  name = "Email" >
             </div>
 
 
             <div class="form-group">
               <label for="Subject">Subject</label>
-              <textarea class="form-control" id="Subject" rows="6"></textarea>
+              <textarea class="form-control" id="Subject" rows="6"  name = "Content" ></textarea>
             </div>
 
             <div class="form-group">
-              <a href="/Prj_Organization/admin/viewticket.php" class="btn btn-primary"> Submit </a>
+              <button class="btn btn-primary" type = "submit"> Submit </button>
             </div>
 
       </div>
 </form>
 
-<?php include "includes/footer.php" ?>
+<?php include "/views/footer.php" ?>
