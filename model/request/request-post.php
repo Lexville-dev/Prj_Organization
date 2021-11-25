@@ -7,10 +7,10 @@ $conn = OpenCon();
       if($stmt = $conn->prepare($sql)){
             $stmt->bind_param("sssiss",$_POST["Title"], $_POST["Name"], $_POST["Contact_Number"], $_POST["Priority"], $_POST["Email"], $_POST["Content"]);
               if($stmt->execute()){
-                  echo "cum";
+                  echo "Oh";
               }
           else{
-            echo "fuck";
+            echo "Job done";
         }
       }
 $conn->close();
