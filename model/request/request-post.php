@@ -7,10 +7,10 @@ $conn = OpenCon();
       if($stmt = $conn->prepare($sql)){
             $stmt->bind_param("sssiss",$_POST["Title"], $_POST["Name"], $_POST["Contact_Number"], $_POST["Priority"], $_POST["Email"], $_POST["Content"]);
               if($stmt->execute()){
-                  echo "Oh";
+                  header("Location: ../../admin/viewticket.php");
               }
           else{
-            echo "Job done";
+            echo "Better luck next time fucko, fix your data";
         }
       }
 $conn->close();
