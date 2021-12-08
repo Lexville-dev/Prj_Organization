@@ -27,7 +27,8 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-<span class="navbar-text" style="float: right;"> <?php $conn = OpenCon(); echo "DB Connected"; ?> </span> <!-- open the connection to the db and if opened successfully echo statement -->  
+    <?php $conn = OpenCon(); echo "DB Connected"; ?>
+<span class="navbar-text">  </span> <!-- open the connection to the db and if opened successfully echo statement -->
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
