@@ -10,7 +10,7 @@ $conn = OpenCon();
                   header("Location: ../../admin/viewticket.php");
               }
           else{
-            echo "Better luck next time fucko, fix your data";
+            echo "Better luck next time, fix your data";
         }
       }
 $conn->close();
