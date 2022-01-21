@@ -1,8 +1,9 @@
-<?php include "../views/header.php"?>
+<?php include "../views/header.php"; ?>
+<?php include "../model/request/request-edit.php" ?>
 
 
 <div class="container">
-  
+
   <form action = "/Prj_Organization/model/request/request-post.php" method = "POST">
         <div class="row">
           <div class="col-xs-12 col-sm-6">
@@ -30,7 +31,7 @@
           <div class="col-xs-12 col-sm-6">
             <div class="form-group">
               <label for="Name">Name</label>
-              <input type="text" class="form-control" id="Name" placeholder="" name = "Name">
+              <input type="text" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
             </div>
           </div>
 

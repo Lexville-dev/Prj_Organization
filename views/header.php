@@ -9,7 +9,7 @@
     include '../includes/db_connection.php';                         //include the databse to the site
     include '../includes/navbar.php';
   ?>
+<h2>Header</h2>
 </head>
-
 
 <body>

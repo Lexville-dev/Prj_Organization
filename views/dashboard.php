@@ -1,6 +1,5 @@
-<?php include "header.php" ?>
+<?php include "header.php";
 
-<?php
 // Attempt select query execution
 
 echo '<div class="container">';
@@ -34,8 +33,8 @@ echo '<div class="container">';
                      echo '<tr>';
                        echo '<td colspan="5">' .$row["Content"] . "</td>";
                        echo '<td colspan="1">' .
-                       '<a class="btn btn-primary" href = "editticket.php?id=' .$row['ID'] .'"> <span class="fa fa-pencil"></span> </a>' .
-                       '<a class="btn btn-primary" href = "deleteticket.php?id=' .$row['ID'] .'"> <span class="fa fa-trash"></span> </a>' . "</td>";
+                       '<a class="btn btn-primary" href = "readticket.php?id=' .$row['ID'] .'"> <span class="fa fa-eye"></span> </a>' .
+                       '<a class="btn btn-primary" href = "editticket.php?id=' .$row['ID'] .'"> <span class="fa fa-pencil"></span> </a>' ."</td>";
                      echo '</tr>';
                    echo '</tr>';
 
@@ -45,6 +44,6 @@ echo '<div class="container">';
       }
     }
      echo '</table>';
-echo '</div>'?>
+echo '</div>';
 
-<?php include "footer.php" ?>
+include "footer.php"; ?>
