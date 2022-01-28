@@ -2,11 +2,10 @@
 if(isset($_POST["id"]) && !empty($_POST["id"])){
   include "../includes/db_connection.php";
 
-$conn = OpenCon();
         // Prepare a delete statement
         $sql = "DELETE FROM request WHERE id = ?";
 
-        if($stmt = mysqli_prepare($mysqli, $sql)){
+        if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
 
