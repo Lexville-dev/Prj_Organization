@@ -1,16 +1,14 @@
 <?php
 include "../../includes/db_connection.php";
 
-$conn = OpenCon();
+if (isset($_POST['submit'])){
+      $Title = $_POST['Title'];
+      $Priority = $_POST['Priority'];
+      $Name = $_POST['Name'];
+      $Contact_Number = $_POST['Contact_Number'];
+      $Email = $_POST['Email'];
+      $Content = $_POST['Content'];
 
-  $sql = "INSERT INTO request (Title, Name, Contact_Number, Priority, Email, Content) VALUES (?, ?, ?, ?, ?, ?)";
-      if($stmt = $conn->prepare($sql)){
-            $stmt->bind_param("sssiss",$_POST["Title"], $_POST["Name"], $_POST["Contact_Number"], $_POST["Priority"], $_POST["Email"], $_POST["Content"]);
-              if($stmt->execute()){
-                  header("Location: ../../admin/viewticket.php");
-              }
-          else{
-            echo "Better luck next time, fix your data";
-        }
-      }
-$conn->close();
+      $mysqli->query("INSERT INTO request (Title, Priority, Name, Contact_Number, Email, Content) VALUES('$Title', '$Priority', '$Name', '$Contact_Number', '$Email', '$Content')") or
+          die($mysqli->error);
+}

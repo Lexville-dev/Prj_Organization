@@ -8,6 +8,7 @@
   <?php
     include '../includes/db_connection.php';                         //include the databse to the site
     include '../includes/navbar.php';
+    include '../includes/stylesheet.css'
   ?>
 <h2>Header</h2>
 </head>

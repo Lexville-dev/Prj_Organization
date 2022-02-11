@@ -1,14 +1,16 @@
 <?php
-function OpenCon(){
- $dbhost = "localhost";
- $dbuser = "root";
- $dbpass = "zsG85Nu4P8gW5SC8";
- $db = "prj_organization";
+/* Database credentials. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'zsG85Nu4P8gW5SC8');
+define('DB_NAME', 'prj_organization');
 
- $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
+/* Attempt to connect to MySQL database */
+$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
- if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+// Check connection
+if($mysqli === false){
+    die("ERROR: Could not connect. " . $mysqli->connect_error);
 }
- return $conn;
-}
+?>

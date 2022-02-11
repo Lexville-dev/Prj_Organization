@@ -15,7 +15,6 @@
                    echo '</tr>';
                  echo '</thead>';
 
-
                  echo '<tbody>';
 
                    echo "<tr>";
