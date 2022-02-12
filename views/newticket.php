@@ -1,6 +1,4 @@
-<?php include "header.php";
-
-?>
+<?php include "header.php";?>
 <header><title>Create</title></header>
 
 <div class="container">

@@ -27,11 +27,11 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);?>
               <tr>
                 <td colspan="5"><?php echo $row['Content'];?></td>
                 <td class="justify-content-center" colspan="1">
-                      <a href="readticket.php?id=<?php echo $row['ID'];?>"
+                      <a href="readticket.php?=<?php echo $row['ID'];?>"
                           class="btn btn-info">           <span class="fa fa-eye">    </span> </a>
-                      <a href="editticket.php?editid=<?php echo $row['ID'];?>"
+                      <a href="editticket.php?edit=<?php echo $row['ID'];?>"
                         class="btn btn-primary" >         <span class="fa fa-pencil"> </span> </a>
-                      <a href="deleteticket.php?deleteid=<?php echo $row['ID'];?>"
+                      <a href="deleteticket.php?delete=<?php echo $row['ID'];?>"
                         class="btn btn-danger" >          <span class="fa fa-trash">  </span> </a>
                 </td>
               </tr>

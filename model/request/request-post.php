@@ -1,5 +1,4 @@
-<?php
-include "../../includes/db_connection.php";
+<?php include "../../includes/db_connection.php";
 
 if (isset($_POST['submit'])){
       $Title = $_POST['Title'];
@@ -11,4 +10,4 @@ if (isset($_POST['submit'])){
 
       $mysqli->query("INSERT INTO request (Title, Priority, Name, Contact_Number, Email, Content) VALUES('$Title', '$Priority', '$Name', '$Contact_Number', '$Email', '$Content')") or
           die($mysqli->error);
-}
+} header("location: ../../views/dashboard.php");
