@@ -7,4 +7,4 @@ if (isset($_POST['delete'])){
   echo "blah";
 }
 
- header("location: ../../admin/viewticket.php");
+  header("location: ../../admin/viewticket.php");
