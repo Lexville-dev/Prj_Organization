@@ -2,7 +2,7 @@
 
 if (isset($_GET['delete'])){
   $id = $_GET['delete'];
-    $mysqli->query("DELETE FROM request WHERE id=$id") or die($mysqli->error);
-}
+    $mysqli->query("DELETE FROM request WHERE id = $id ") or die($mysqli->error);
+};
 
- header("location: ../../admin/viewticket.php");
+  header("location: ../../admin/viewticket.php");
