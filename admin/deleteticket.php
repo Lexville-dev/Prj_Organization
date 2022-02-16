@@ -1,6 +1,8 @@
-<?php include "../views/header.php"?>
+<?php include "../views/header.php";
+$id = $_GET['delete'];
+$result = $mysqli->query("SELECT * FROM request WHERE id = $id ")->fetch_assoc() or die($mysqli->error);?>
 
-<?php $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);?>
+cum
 
 <div class="wrapper">
     <div class="container-fluid">
@@ -10,8 +12,8 @@
               <form action="/Prj_Organization/model/request/request-delete.php" method="POST">
                     <div class="alert alert-danger">
                         <p>Are you sure you want to delete this record?</p>
-                        <a href="../model/request/request-delete.php?delete=<?php echo $row['ID'];?>"
-                          name="delete" class="btn btn-danger"> delete </a>
+                        <button type="submit" class="btn btn-danger"> delete </button>
+                          <input type="hidden" name="delete" value="<?php echo $result['ID']?>"/>
                     </div>
                 </form>
             </div>
