@@ -62,7 +62,6 @@
 </form>
 
 <div class="form-group">
-  <a class="btn btn-primary" href = "../admin/viewticket.php" > admin </a>
 </div>
 
 <?php include "footer.php" ?>

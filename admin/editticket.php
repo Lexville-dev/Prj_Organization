@@ -6,14 +6,14 @@
 
   <form action = "/Prj_Organization/model/request/request-post.php" method = "POST">
         <div class="row">
-          <div class="col-xs-12 col-sm-6">
+          <div class="col-xs-12 col-sm-10">
             <div class="form-group">
               <label for="RequestTitle">Request Title</label>
               <input type="text" class="form-control" id="RequestTitle" placeholder="" name = "Title" >
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-6">
+          <div class="col-xs-12 col-sm-2">
             <div class="form-group">
               <label for="SelectPriority">Select Priority</label>
                 <select class="form-select" aria-label=".form-select-sm example" name = "Priority" >
@@ -57,8 +57,8 @@
           <div class="form-group">
             <button class="btn btn-primary" type = "submit"> Submit </button>
           </div>
-
-    </div>
   </form>
+    </div>
+
 </div>
 <?php include "../views/footer.php"?>

@@ -27,9 +27,7 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);?>
               <tr>
                 <td colspan="5"><?php echo $row['Content'];?></td>
 
-                <td class="justify-content-center" colspan="1">
-                      <a href="readticket.php?=<?php echo $row['ID'];?>"
-                          class="btn btn-info">             <span class="fa fa-eye">       </span> </a>
+                <td colspan="1">
                       <a href="editticket.php?edit=<?php echo $row['ID'];?>"
                           class="btn btn-primary" >         <span class="fa fa-pencil">  </span> </a>
                       <a href="deleteticket.php?delete=<?php echo $row['ID'];?>"
@@ -42,6 +40,5 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);?>
 </div>
 
    <div class="form-group">
-     <a href="../views/index.php" class="btn btn-primary"> back </a>
    </div>
 <?php include "../views/footer.php" ?>
