@@ -26,8 +26,9 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);?>
                 <td><?php echo $row['Priority'];?></th>
           <tr>
                 <td colspan="5"><?php echo $row['Content'];?></td>
+
                 <td class="justify-content-center" colspan="1">
-                      <a class="btn btn-primary" href="readticket.php?id=<?php echo $row['ID'];?>">
+                      <a class="btn btn-primary" href="readticket.php?read=<?php echo $row['ID'];?>">
                           <span class="fa fa-eye"></span>     </a>
                   <!--<a class="btn btn-primary" href="editticket.php?id=<?php echo $row['ID'];?>">
                           <span class="fa fa-pencil"></span>  </a> -->

@@ -1,12 +1,8 @@
-<?php
+<?php include "../../includes/db_connection.php";
 
-$conn = OpenCon();
-
-$sql = "SELECT * FROM request WHERE id = ?";
-$result = $conn->query($sql);
-if($result->num_rows > 1){
-while($row = $result->fetch_assoc()) {
-
-  }
+if (isset($_POST['read'])){
+  $id = $_POST['read'];
+    $mysqli->query("SELECT FROM request WHERE id = $id ") or die($mysqli->error);
+} else{
+  echo "blah";
 }
-$conn->close();
