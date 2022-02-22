@@ -1,15 +1,51 @@
-<?php include "../views/header.php"; ?>
-<?php include "../model/request/request-edit.php" ?>
+<?php include "../views/header.php";
+      include "../model/request/request-edit.php";
 
+    $id = $_GET['edit'];
+    $result = $mysqli->query("SELECT * FROM request WHERE id = $id ") or die($mysqli->error);
+
+    ?>
+
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col-4">Note ID</th>
+            <th scope="col-4">Title</th>
+            <th scope="col-4">Name</th>
+            <th scope="col-4">Contact Number</th>
+            <th scope="col-4">Date/Time</th>
+            <th scope="col-4">Priority</th>
+          </tr>
+        </thead>
+
+          <?php while($row = $result->fetch_assoc()): ?>
+
+        <tbody>
+          <tr>
+              <td><?php echo $row['ID'];?></th>
+              <td><?php echo $row['Title'];?></th>
+              <td><?php echo $row['Name'];?></th>
+              <td><?php echo $row['Contact_Number'];?></th>
+              <td><?php echo $row['Date_Time'];?></th>
+              <td><?php echo $row['Priority'];?></th>
+            <tr>
+              <td colspan="6"><?php echo $row['Content'];?></td>
+            </tr>
+          </tr> <?php endwhile; ?>
+        </tbody>
+    </table>
+</div>
 
 <div class="container">
 
-  <form action = "/Prj_Organization/model/request/request-post.php" method = "POST">
+  <form action = "/Prj_Organization/model/request/request-edit.php" method = "POST">
         <div class="row">
           <div class="col-xs-12 col-sm-10">
             <div class="form-group">
               <label for="RequestTitle">Request Title</label>
-              <input type="text" class="form-control" id="RequestTitle" placeholder="" name = "Title" >
+              <input  type="text" name = "Title" class="form-control"
+                      value="<?php echo $Title; ?>" placeholder="Insert your title here" id="RequestTitle">
             </div>
           </div>
 
