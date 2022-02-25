@@ -36,3 +36,5 @@ $result = $mysqli->query("SELECT * FROM request WHERE id = $id ") or die($mysqli
         </tbody>
     </table>
 </div>
+
+<?php include "footer.php" ?>

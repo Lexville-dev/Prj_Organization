@@ -29,15 +29,15 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);
                 <td class="col-2"><?php echo $row['Date_Time'];?>     </td>
                 <td class="col-1"><?php echo $row['Priority'];?>      </td>
 
-        <tr class="collapse.show" id="<?=$current_id?>">
+        <tr class="collapse.show" id="<?=$current_id?>" >
                 <td colspan="5"><p><?php echo shorten($content, 256); ?></p></td>
 
-                <td class="justify-content-center" colspan="1">
-                      <a href="readticket.php?read=<?php echo $row['ID'];?>"
+                <td class="justify-content-center d-flex" colspan="1">
+                      <a href="readticket.php?read=<?php echo $row['ID'];?>" style="margin: auto;"
                           class="btn btn-primary" >       <span class="fa fa-eye">     </span></a>
-                      <a href="editticket.php?edit=<?php echo $row['ID'];?>"
+                      <a href="editticket.php?edit=<?php echo $row['ID'];?>" style="margin: auto;"
                           class="btn btn-primary" >       <span class="fa fa-pencil">  </span> </a>
-                      <a href="deleteticket.php?delete=<?php echo $row['ID'];?>"
+                      <a href="deleteticket.php?delete=<?php echo $row['ID'];?>" style="margin: auto;"
                           class="btn btn-danger"  >       <span class="fa fa-trash">   </span> </a>
                         </td>
                   </tr>
