@@ -1,4 +1,4 @@
-<?php include "../views/header.php";
+<?php include "../includes/header.php";
 
 $id = $_GET['delete'];
 $result = $mysqli->query("SELECT * FROM request WHERE id = $id ")->fetch_assoc() or die($mysqli->error);
@@ -54,4 +54,4 @@ $result = $mysqli->query("SELECT * FROM request WHERE id = $id ") or die($mysqli
     </table>
 </div>
 
-<?php include "../views/footer.php" ?>
+<?php include "../includes/footer.php" ?>

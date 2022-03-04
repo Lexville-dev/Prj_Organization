@@ -1,4 +1,4 @@
-<?php include "../views/header.php";
+<?php include "../includes/header.php";
 require_once "../includes/functions.php";
 
 $id = $_GET['read'];
@@ -36,3 +36,5 @@ $result = $mysqli->query("SELECT * FROM request WHERE id = $id ") or die($mysqli
         </tbody>
     </table>
 </div>
+
+<?php include "../includes/footer.php";?>

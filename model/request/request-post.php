@@ -10,4 +10,23 @@ if (isset($_POST['submit'])){
 
       $mysqli->query("INSERT INTO request (Title, Priority, Name, Contact_Number, Email, Content) VALUES('$Title', '$Priority', '$Name', '$Contact_Number', '$Email', '$Content')") or
           die($mysqli->error);
-} header("location: ../../views/dashboard.php");
+
+      header("location: ../../views/dashboard.php");
+}
+
+if (isset($_POST['AddUser'])){
+
+    $Name = $_POST['Name'];
+    $Email = $_POST['Email'];
+    $Password = $_POST['Password'];
+    $RepeatPassword = $_POST['RepeatPassword'];
+
+    if($Password === $RepeatPassword){
+      $mysqli->query("INSERT INTO users (Name, Email_Address, Password) VALUES('$Name', '$Email', '$Password')") or
+          die($mysqli->error);
+                header("location: ../../views/dashboard.php");
+        }
+  else{
+    echo "The passwords do not match, please try again";
+  }
+}

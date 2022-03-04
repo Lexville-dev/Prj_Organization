@@ -1,4 +1,4 @@
-<?php include "../views/header.php";
+<?php include "../includes/header.php";
 
 $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);
 ?>
@@ -46,4 +46,4 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);
             </tbody>
           </table>
         </div>
-<?php include "../views/footer.php" ?>
+<?php include "../includes/footer.php" ?>

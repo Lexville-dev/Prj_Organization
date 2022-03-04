@@ -1,4 +1,4 @@
-<?php include "header.php";
+<?php include "../includes/header.php";
 
 $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);
 ?>
@@ -42,4 +42,6 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);
   </table>
 </div>
 
-<?php include "footer.php"; ?>
+  <a href = "../views/user.php"> user </a>
+
+<?php include "../includes/footer.php"; ?>

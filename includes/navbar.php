@@ -15,6 +15,9 @@
         <a class="nav-link" href="../views/newticket.php">Create a Ticket</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="../views/user.php">Users</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="../admin/viewticket.php">Admin</a>
       </li>
         </div>

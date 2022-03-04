@@ -1,4 +1,4 @@
-<?php include "header.php";?>
+<?php include "../includes/header.php";?>
 
 <div class="container">
   <div class="d-flex justify-content-center">
@@ -65,4 +65,4 @@
 <div class="form-group">
 </div>
 
-<?php include "footer.php" ?>
+<?php include "../includes/footer.php" ?>
