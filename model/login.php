@@ -1,16 +1,35 @@
 <?php include "../includes/header.php";
 
-if(isset($_POST['Login'])){
+/*
+ * If you do the opposite here, quit early if NOY login, you can
+ * reduce the amount of indentation you need :)
+ */
+if (!isset($_POST['Login'])) {
+    return;
+}
 
-    $Name = $_POST['Name'];
-    $Password = $_POST['Password'];
+/*
+ * As a general rule of thumb, most variables are lowercased in
+ * 'snake_case' style
+ */
+$name = $_POST['Name'];
+$password = $_POST['Password'];
 
-    $hash = $mysqli->query("SELECT Password FROM users WHERE Name = $Name");
+// Query the database for the users details
+$query = $mysqli->query("SELECT Password FROM users WHERE Name = '$Name'");
 
-      if(password_verify($Password, $hash)){
-        echo "password is valid";
-      } else{
-        echo "password is invalid";
-      }
+// First check: Did a user with that name exist?
+if ($query->num_rows === 0) {
+    echo 'Unknown user: ' . $name;
+    return;
+}
 
+// Second check: Does the password match?
+$row = $query->fetch_assoc();
+$stored_password = $row['Password'];
+
+if (password_verify($password, $stored_password)) {
+    echo "password is valid";
+} else {
+    echo "password is invalid";
 }
