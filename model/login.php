@@ -1,7 +1,7 @@
 <?php include "../includes/header.php";
 
 /*
- * If you do the opposite here, quit early if NOY login, you can
+ * If you do the opposite here, quit early if NOT login, you can
  * reduce the amount of indentation you need :)
  */
 if (!isset($_POST['Login'])) {
@@ -9,8 +9,8 @@ if (!isset($_POST['Login'])) {
 }
 
 /*
- * As a general rule of thumb, most variables are lowercased in
- * 'snake_case' style
+ * As a general rule of thumb, most variables should be lowercased
+ * in 'snake_case' style
  */
 $name = $_POST['Name'];
 $password = $_POST['Password'];
