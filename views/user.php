@@ -4,18 +4,18 @@
   <!-- This table logs in -->
   <div class="col 12">
     <h1> Login </h1>
-    <form action = "/Prj_Organization/model/request/request-post.php" method = "POST">
+    <form action = "/Prj_Organization/model/login.php" method = "POST">
       <div class="d-flex justify-content-center">
         <div class="form-group col-md-10">
           <label>Your Username</label>
-          <input type="text" class="form-control" id="UserName" placeholder="" name="Name" >
+          <input type="text" class="form-control" id="UserName" placeholder="Your username here" name="Name" >
         </div>
       </div>
 
       <div class="d-flex justify-content-center">
         <div class="form-group col-md-10">
           <label>Password</label>
-          <input type="text" class="form-control" id="Password" placeholder="" name="Password" >
+          <input type="text" class="form-control" id="Password" placeholder="Your password here" name="Password" >
         </div>
       </div>
 
