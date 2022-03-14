@@ -26,7 +26,7 @@ if (isset($_POST['AddUser'])){
 
             $Password = password_hash($Password, PASSWORD_BCRYPT);
 
-      $mysqli->query("INSERT INTO users (Name, Email_Address, Password) VALUES('$Name', '$Email', '$Password')") or
+      $mysqli->query("INSERT INTO users (Name, Email, Password) VALUES('$Name', '$Email', '$Password')") or
           die($mysqli->error);
                 header("location: ../../views/dashboard.php");
         }

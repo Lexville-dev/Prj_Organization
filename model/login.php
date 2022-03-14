@@ -29,7 +29,8 @@ $row = $query->fetch_assoc();
 $stored_password = $row['Password'];
 
 if (password_verify($Password, $stored_password)) {
-    echo "password is valid";
+    session_start();
+    echo "<div class='alert alert-success' role='alert'>Password was valid!</div>";
 } else {
-    echo "password is invalid";
+    echo "<div class='alert alert-danger' role='alert'>password is invalid</div>";
 }

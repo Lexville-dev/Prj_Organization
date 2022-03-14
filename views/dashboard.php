@@ -42,6 +42,4 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);
   </table>
 </div>
 
-  <a href = "../views/user.php"> user </a>
-
 <?php include "../includes/footer.php"; ?>
