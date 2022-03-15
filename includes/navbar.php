@@ -39,7 +39,13 @@
               Users
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><h6 class="dropdown-header"> Username: <!--<?php echo $_SESSION['counter']; ?>--> </h6></li>
+            <?php if(!isset($_SESSION['username'])){ ?>
+              <li><h6 class='dropdown-header'> Username: </h6></li>
+              <li><h6 class='dropdown-header'> Password: </h6></li>
+            <?php } else { ?>
+              <li><h6 class='dropdown-header'> Username: <?php echo $_SESSION['username']; ?> </h6></li>
+              <li><h6 class='dropdown-header'> Password: <?php echo $_SESSION['password']; ?> </h6></li>
+            <?php } ?>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="../views/user.php">Users</a></li>
             <li><a class="dropdown-item" href="../views/user-edit.php">Edit User</a></li>

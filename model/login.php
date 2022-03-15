@@ -29,13 +29,16 @@ $row = $query->fetch_assoc();
 $stored_password = $row['Password'];
 
 if (password_verify($Password, $stored_password)) {
-    session_start();
-        if(isset ($_SESSION['counter'] ) ){
-          $_SESSION['counter'] +=1;
-        } else{
-          $_SESSION['counter'] =1;
-        }
-    echo "<div class='alert alert-success' role='alert'>Password was valid!</div>";
+
+  $_SESSION['username'] = $Name;
+  $_SESSION['password'] = $Password;
+
+  pre_r($_SESSION);
+
+    echo "<div class='alert alert-success' role='alert'>Password was valid!";
+    echo "<br />";
+    echo "<a href='../views/dashboard.php'>dashboard</a></div>";
+
 } else {
     echo "<div class='alert alert-danger' role='alert'>password is invalid</div>";
 }

@@ -9,3 +9,9 @@ function shorten(string $field, int $value2){
   }
 
 };
+
+function pre_r($array){
+  echo '<pre>';
+  print_r($array);
+  echo '</pre>';
+}

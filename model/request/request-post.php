@@ -1,6 +1,7 @@
 <?php include "../../includes/db_connection.php";
 
 if (isset($_POST['submit'])){
+
       $Title = $_POST['Title'];
       $Priority = $_POST['Priority'];
       $Name = $_POST['Name'];
