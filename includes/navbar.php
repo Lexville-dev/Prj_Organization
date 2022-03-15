@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<?php if(!isset($_SESSION['username'])){ ?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+<?php } else { ?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+<?php }; ?>
 
 <div class="container-fluid">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -7,7 +11,7 @@
     </button>
 
 <!-- left -->
-  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+  <div class="navbar w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="../views/dashboard.php">Home <span class="sr-only">(current)</span></a>
@@ -19,17 +23,17 @@
   </div>
 
 <!-- middle -->
-  <div class="mx-auto w-100 order-0">
-    <ul>
+  <div class="navbar w-100 order-2 dual-collapse2" style="background:#f8f9fa;">
+    <ul class="navbar-nav mx-auto">
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control col-lg-12" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </ul>
   </div>
 
 <!-- right -->
-<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+  <div class="navbar w-100 order-3 dual-collapse2">
     <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="../admin/viewticket.php">Admin</a>
@@ -41,16 +45,14 @@
           <ul class="dropdown-menu dropdown-menu-end">
             <?php if(!isset($_SESSION['username'])){ ?>
               <li><h6 class='dropdown-header'> Username: </h6></li>
-              <li><h6 class='dropdown-header'> Password: </h6></li>
             <?php } else { ?>
               <li><h6 class='dropdown-header'> Username: <?php echo $_SESSION['username']; ?> </h6></li>
-              <li><h6 class='dropdown-header'> Password: <?php echo $_SESSION['password']; ?> </h6></li>
             <?php } ?>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="../views/user.php">Users</a></li>
             <li><a class="dropdown-item" href="../views/user-edit.php">Edit User</a></li>
             <li><hr class="dropdown-divider"></li>
-            <form action="../model/logout.php">
+            <form action="../views/logout.php">
               <li>
                 <button class="btn dropdown-item" type="submit">Logout</button>
               </li>

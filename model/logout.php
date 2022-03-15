@@ -1,6 +1,7 @@
-<?php include "../includes/header.php"; ?>
+<?php include "../includes/header.php";
 
-<?php
-session_destroy(); ?>
+session_destroy();
 
-<?php include "../includes/footer.php"; ?>
+  header("location: ../views/dashboard.php");
+
+include "../includes/footer.php"; ?>

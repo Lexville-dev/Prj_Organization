@@ -31,7 +31,6 @@ $stored_password = $row['Password'];
 if (password_verify($Password, $stored_password)) {
 
   $_SESSION['username'] = $Name;
-  $_SESSION['password'] = $Password;
 
   pre_r($_SESSION);
 
