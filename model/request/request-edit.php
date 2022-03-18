@@ -46,7 +46,7 @@ if (isset($_POST['updateuser'])){
     $Name = $_POST['Name'];
     $Phone_Number = $_POST['Phone_Number'];
     $Email = $_POST['Email'];
-    $Admin = isset($_POST['Administrator']) ? 1 : 0;
+    $Admin = isset($_POST['Admin']) ? 1 : 0;
 
     $result = $mysqli->query("UPDATE users SET Name='$Name', Phone_Number='$Phone_Number', Email='$Email', Admin='$Admin' WHERE user_id= $id")
        or die ($mysqli->error);
