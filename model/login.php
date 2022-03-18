@@ -16,7 +16,7 @@ $Name = $_POST['Name'];
 $Password = $_POST['Password'];
 
 // Query the database for the users details
-$query = $mysqli->query("SELECT Password FROM users WHERE Name = '$Name'");
+$query = $mysqli->query("SELECT Password, user_id FROM users WHERE Name = '$Name'");
 
 // First check: Did a user with that name exist?
 if ($query->num_rows === 0) {
@@ -29,15 +29,10 @@ $row = $query->fetch_assoc();
 $stored_password = $row['Password'];
 
 if (password_verify($Password, $stored_password)) {
+    $_SESSION['username'] = $Name;
+    $_SESSION['id'] = $row['user_id'];
 
-  $_SESSION['username'] = $Name;
-
-  pre_r($_SESSION);
-
-    echo "<div class='alert alert-success' role='alert'>Password was valid!";
-    echo "<br />";
-    echo "<a href='../views/dashboard.php'>dashboard</a></div>";
-
+    header( $admin == 1 ? "location: ../admin/viewticket.php" : "location: ../views/dashboard.php" );
 } else {
     echo "<div class='alert alert-danger' role='alert'>password is invalid</div>";
 }

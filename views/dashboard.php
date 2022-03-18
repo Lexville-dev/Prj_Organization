@@ -42,4 +42,6 @@ $result = $mysqli->query("SELECT * FROM request") or die($mysqli->error);
   </table>
 </div>
 
+<?php pre_r($_SESSION);?>
+
 <?php include "../includes/footer.php"; ?>

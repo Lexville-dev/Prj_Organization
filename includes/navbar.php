@@ -36,7 +36,13 @@
   <div class="navbar w-100 order-3 dual-collapse2">
     <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../admin/viewticket.php">Admin</a>
+          <?php if(!ISSET($_SESSION['username'])){?>
+            <a class="nav-link" href="../views/login.php">Login</a>
+          <?php } else { ?>
+          <?php } ?>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../views/register.php">Register</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,8 +55,8 @@
               <li><h6 class='dropdown-header'> Username: <?php echo $_SESSION['username']; ?> </h6></li>
             <?php } ?>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="../views/user.php">Users</a></li>
-            <li><a class="dropdown-item" href="../views/user-edit.php">Edit User</a></li>
+            <li><a class="dropdown-item" href="../admin/viewticket.php">Admin</a></li>
+            <li><a class="dropdown-item" href="../views/account.php">My Account</a></li>
             <li><hr class="dropdown-divider"></li>
             <form action="../views/logout.php">
               <li>

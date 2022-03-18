@@ -13,7 +13,6 @@
     include '../includes/navbar.php';
     include '../includes/functions.php';
     include '../includes/stylesheet.css';
-
   ?>
 
 </head>

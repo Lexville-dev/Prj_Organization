@@ -1,9 +1,43 @@
 <style>
-table, th, td{
-            /*border: 1px solid black;*/
-            border-collapse: collapse;
-            padding: 6px;
-            text-align:center;
+/*global*/
+html{
+  background-color: #f3f6f4;
+}
 
-        }
+/*header*/
+head{
+    background-color: #f3f6f4;
+}
+
+/*body*/
+body{
+  background-color: #f3f6f4;
+}
+table, th, td{
+/*border: 1px solid black;*/
+border-collapse: collapse;
+padding: 6px;
+text-align:center;
+}
+
+.login-form{
+  flex: 0 0 auto;
+  width: 50%;
+  margin: 50px;
+  border-style: double;
+  background-color: lightgray;
+  padding: 15px;
+}
+.register-form{
+  flex: 0 0 auto;
+  width: 50%;
+  margin: 50px;
+  border-style: double;
+  background-color: lightgray;
+  padding: 15px;
+}
+
+/*footer*/
+
+
 </style>
